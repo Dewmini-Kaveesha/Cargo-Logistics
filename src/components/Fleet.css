@@ -1,0 +1,115 @@
+/* Fleet.css */
+.fleet {
+  padding: var(--section-pad);
+  background: var(--clr-navy-mid);
+}
+
+.fleet__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.fleet__header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3.5rem;
+}
+
+.fleet__header .section-subtitle {
+  margin: 0.75rem auto 0;
+}
+
+/* Masonry-style grid */
+.fleet__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+}
+
+/* Featured (large) items */
+.fleet__item--featured {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.fleet__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+.fleet__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 200px;
+  transition: transform 0.5s ease;
+}
+
+.fleet__item--featured img {
+  min-height: 418px;
+}
+
+.fleet__item:hover img {
+  transform: scale(1.06);
+}
+
+/* Hover overlay */
+.fleet__item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,14,26,0.85) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem;
+}
+
+.fleet__item:hover .fleet__item-overlay {
+  opacity: 1;
+}
+
+.fleet__item-label {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--clr-white);
+}
+
+.fleet__item-sub {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--clr-accent);
+  margin-top: 0.2rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .fleet__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .fleet__item--featured {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .fleet__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fleet__item--featured {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  .fleet__item--featured img { min-height: 220px; }
+}
+
+@media (max-width: 420px) {
+  .fleet__grid { grid-template-columns: 1fr; }
+  .fleet__item--featured { grid-column: span 1; }
+}
