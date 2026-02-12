@@ -101,7 +101,7 @@ The quote form in the **Contact** section:
 
 **To configure your number**, update the `phone` variable in `src/components/Contact.jsx`:
 ```js
-const phone = '94771234567'  // Replace with your WhatsApp number (no + or spaces)
+const phone = '94741234567'  // Replace with your WhatsApp number (no + or spaces)
 ```
 
 ---
